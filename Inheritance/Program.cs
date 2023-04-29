@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Inheritance
 {
@@ -6,8 +7,29 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            // TODO Be sure to follow best practice when creating your classes
+            var myBird = new Bird();
+            myBird.DoesFly = true;// TODO Be sure to follow best practice when creating your classes
+            myBird.Has2Legs = true;
+            myBird.HasWings = 2;
+            myBird.HasBeak = true;
 
+            var snake = new Reptile()
+            {
+                ColdBlooded = "yes",
+                IsATetrapod = true,
+                CoveredInScales = true,
+                IsAnAmphibion = "no"
+            };
+
+            var myAnimals = new Animal[] {myBird, snake};
+
+            foreach (var animal in myAnimals)
+            {
+                Console.WriteLine($"NeedsToSleep: {animal.NeedsToSleep}");
+                Console.WriteLine($"NeedsToEat: {animal.NeedsToEat}");
+                Console.WriteLine($"Animal does has cells: {animal.HasCells}");
+                Console.WriteLine($"Animal has {animal.HasLegs}) legs.");
+            }
             // Create a class Animal
             // give this class 4 members that all Animals have in common
 
